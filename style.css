@@ -1,3 +1,4 @@
+/*-----------------------------ESTILOS LOGIN------------------------*/
 h2{
  text-align: center;
  margin-bottom: 30px;
@@ -29,3 +30,18 @@ li input, button{
  margin-bottom: 30px;
 }
 }
+
+/*-----------------ESTILOS REGISTRARSE---------------------------*/
+form > div{
+ margin-bottom: 30px;
+}
+
+/*form div{
+ border: 0.2px solid black;
+}*/
+
+.correo__ , .repetirCorreo{
+ width: 88%;
+}
+
+

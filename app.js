@@ -48,34 +48,38 @@ const traerUsuariosLogueados = () => {
 let mailUsuarioVerificar = document.querySelector('.correo');
 let passUsuarioVerificar = document.querySelector('.contrasenia');
 let btnIngresar = document.querySelector('.ingresar');
-let formulario = document.querySelector('.formulario');
-
 
 let usuariosLogueados = traerUsuariosLogueados();
 
-btnIngresar.addEventListener('click', validarUsuarios);
+btnIngresar.addEventListener('click', direccionarBienvenido);
 
 
-function validarUsuarios(){
- usuariosLogueados.forEach((u) => {
- let correo = u.email.toString();
- let clave = u.password.toString();
- if (mailUsuarioVerificar.value.toString().match(correo) && 
-  passUsuarioVerificar.value.toString().match(clave)) {
-  alert('bienvenido');
-  formulario.action = "./bienvenido.html";
+function validarUsuarios() {
+ let bandera;
+ for (let i = 0; i < usuariosLogueados.length; i++) {
+  let correo = usuariosLogueados[i].email.toString();
+  let clave = usuariosLogueados[i].password.toString();
+  if (mailUsuarioVerificar.value.toString().match(correo) &&
+   passUsuarioVerificar.value.toString().match(clave)) {
+   bandera = true;
+   alert('Bienvenido');
+   break
   }
- else {
-  alert('los datos no coinciden')
-  formulario.action = "";
+  else {
+   bandera = false;
+   alert('los datos son incorrectos o no existe el usuario');
+   break
   }
- })
-
- btnIngresar.removeEventListener('click',validarUsuarios)
+ }
+ return bandera
 }
 
-
-
-
+function direccionarBienvenido() {
+ let validacion = validarUsuarios();
+ if (validacion == true) {
+  //window.location = 'bienvenido.html';
+  alert('ksksksk')
+ }
+}
 
 
