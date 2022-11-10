@@ -45,34 +45,8 @@ const traerUsuariosLogueados = () => {
 }
 
 
-let mailUsuarioVerificar = document.querySelector('.correo');
-let passUsuarioVerificar = document.querySelector('.contrasenia');
-let btnIngresar = document.querySelector('.ingresar');
-let formulario = document.querySelector('.formulario');
 
 
-let usuariosLogueados = traerUsuariosLogueados();
-
-btnIngresar.addEventListener('click', validarUsuarios);
-
-
-function validarUsuarios(){
- usuariosLogueados.forEach((u) => {
- let correo = u.email.toString();
- let clave = u.password.toString();
- if (mailUsuarioVerificar.value.toString().match(correo) && 
-  passUsuarioVerificar.value.toString().match(clave)) {
-  alert('bienvenido');
-  formulario.action = "./bienvenido.html";
-  }
- else {
-  alert('los datos no coinciden')
-  formulario.action = "";
-  }
- })
-
- btnIngresar.removeEventListener('click',validarUsuarios)
-}
 
 
 
