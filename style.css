@@ -1,0 +1,31 @@
+h2{
+ text-align: center;
+ margin-bottom: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.imagen{
+  margin-bottom: 60px;
+}
+
+ul{
+ list-style: none;
+}
+
+ul li{
+ display: flex;
+ justify-content: center;
+}
+
+li input, button{
+ width: 50%;
+ margin-bottom: 30px;
+ border-radius: 5px;
+}
+
+@media(max-width:700px){
+ li input{
+ width: 90%;
+ margin-bottom: 30px;
+}
+}
