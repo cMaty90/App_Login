@@ -36,12 +36,15 @@ form > div{
  margin-bottom: 30px;
 }
 
-/*form div{
- border: 0.2px solid black;
-}*/
-
-.correo__ , .repetirCorreo{
- width: 88%;
+.fila1 input{
+ width: 75%;
 }
+
+.fila2__correo{
+ width: 75%;
+}
+
+
+
 
 

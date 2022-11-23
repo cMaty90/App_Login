@@ -29,38 +29,58 @@ let vectorUsuarios = [
  
 ]
 
-localStorage.setItem('vectorUsuarios', JSON.stringify(vectorUsuarios));
+localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
 
 
- 
-const agregarNuevoUsuario = () => {
- let nroUsuario = vectorUsuarios.length+1;
- let userName = document.querySelector('.nombre-usuario').value;
- let correo = document.querySelector('.correo-usuario').value;
- let contrasenia = document.querySelector('.clave').value;
- let nombre = document.querySelector('.nombre').value;
- let apellido = document.querySelector('.apellido').value;
- 
- let usuarioNuevo = {
-  userId: nroUsuario,
-  username: userName.toString(),
-  email: correo.toString(),
-  password: contrasenia.toString(),
-  name: nombre.toString(),
-  lastname:apellido.toString()
- }
+const vectorLogueados = JSON.parse(localStorage.getItem('vectorLogueados'));
 
- vectorUsuarios.push(usuarioNuevo);
- //let usuarioAgregado = vectorUsuarios[vectorUsuarios.length - 1];
- return vectorUsuarios
+let newUser = {
+  userId: 0,
+  username:'',
+  email:'',
+  password:'',
+  name:'',
+  lastname:''
 }
+ 
+let numerooo = '';
 
+document.querySelector('.btnRegistrar').addEventListener('click', (e) => {
 
-let form = document.querySelector('.formulario');
-form.addEventListener('submit', (e) => {
- e.preventDefault();
- let vectorConNuevosUsuarios = agregarNuevoUsuario();
- for (let i = 0; i < vectorConNuevosUsuarios.length; i++) {
- localStorage.setItem('vectorUsuarios', vectorConNuevosUsuarios[vectorConNuevosUsuarios.length - 1]);
- }
+ 
+ vectorLogueados.push( newUser = {
+   userId: vectorLogueados.length+1,
+   username: document.querySelector('.fila1__user-name').value,
+   email: document.querySelector('.fila2__correo').value,
+   password: document.querySelector('.fila4__clave').value,
+   name: document.querySelector('.fila1__name').value,
+   lastname: document.querySelector('.fila1__last-name').value
+ })
+ 
+ localStorage.setItem('vectorLogueados',JSON.stringify(vectorLogueados));
+ document.querySelector('.formulario').reset();
+ e.preventDefault()
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

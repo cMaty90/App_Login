@@ -22,31 +22,31 @@
      <div class="row">
       <h3 class="col">Registrarse</h3>
      </div>
-     <div class="row">
-      <div class="col-4 col-sm-6 "><input type="text" placeholder="nombre" class="w-75 nombre"></div>
-      <div class="col-4"><input type="text" placeholder="Apellido" class="w-75 apellido"></div>
-      <div class="col-4"><input type="text" placeholder="Nombre De Usuario" class="w-75 nombre-usuario"></div>
+     <div class="row fila1">
+      <div class="col-lg-4"><input type="text" placeholder="nombre" class="fila1__name"></div>
+      <div class="col-lg-4"><input type="text" placeholder="Apellido" class="fila1__last-name"></div>
+      <div class="col-lg-4"><input type="text" placeholder="Nombre De Usuario" class="fila1__user-name"></div>
+     </div>
+
+     <div class="row fila2">
+      <div class="col-lg-6"><input type="email" placeholder="correo" class="fila2__correo"></div>
+      <div class="col-lg-6"><input type="email" placeholder="repetir correo" class="fila2__correo"></div>
+     </div>
+
+     <div class="row fila3">
+      <div class="col-lg-6"><input type="password" placeholder="contraseña" class="w-75 fila4__clave"></div>
+      <div class="col-lg-6"><input type="password" placeholder="repetir contraseña" class="w-75 fila4__rep-clave"></div>
      </div>
 
      <div class="row">
-      <div class="col"><input type="text" placeholder="correo" class="correo-usuario"></div>
-     </div>
-
-     <div class="row">
-      <div class="col"><input type="email" placeholder="repetir correo" class="repetirCorreo"></div>
-     </div>
-
-     <div class="row">
-      <div class="col-12 col-sm-6"><input type="password" placeholder="contraseña" class="w-75 clave"></div>
-      <div class="col"><input type="password" placeholder="repetir contraseña" class="w-75"></div>
-     </div>
-
-     <div class="row">
-      <div class="col d-flex justify-content-center btnRegistrar"><button type="submit">Registrarse</button></div>
+      <div class="col d-flex justify-content-center"><button type="submit" class="btnRegistrar">Registrarse</button></div>
      </div>
    </form>
   </section>
-  <a href="./index.html">Volver</a>
+
+  <section class="volver d-flex justify-content-center">
+   <a href="./index.html">Volver</a>
+  </section>
   <!--<button class="btn-longitud">traer longitud</button>-->
   
  </main>
