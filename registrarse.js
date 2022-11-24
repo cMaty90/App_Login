@@ -29,38 +29,31 @@ let vectorUsuarios = [
  
 ]
 
-localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
-
-
 const vectorLogueados = JSON.parse(localStorage.getItem('vectorLogueados'));
 
-let newUser = {
-  userId: 0,
-  username:'',
-  email:'',
-  password:'',
-  name:'',
-  lastname:''
+if (vectorLogueados == null) {
+ localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios))
 }
- 
-let numerooo = '';
-
-document.querySelector('.btnRegistrar').addEventListener('click', (e) => {
-
- 
- vectorLogueados.push( newUser = {
-   userId: vectorLogueados.length+1,
-   username: document.querySelector('.fila1__user-name').value,
-   email: document.querySelector('.fila2__correo').value,
-   password: document.querySelector('.fila4__clave').value,
-   name: document.querySelector('.fila1__name').value,
-   lastname: document.querySelector('.fila1__last-name').value
+else {
+ document.querySelector('.btnRegistrar').addEventListener('click', (e) => {
+   
+  vectorLogueados.push( newUser = {
+    userId: vectorLogueados.length+1,
+    username: document.querySelector('.fila1__user-name').value,
+    email: document.querySelector('.fila2__correo').value,
+    password: document.querySelector('.fila4__clave').value,
+    name: document.querySelector('.fila1__name').value,
+    lastname: document.querySelector('.fila1__last-name').value
+  })
+  
+  localStorage.setItem('vectorLogueados',JSON.stringify(vectorLogueados));
+  document.querySelector('.formulario').reset();
+  e.preventDefault()
  })
- 
- localStorage.setItem('vectorLogueados',JSON.stringify(vectorLogueados));
- document.querySelector('.formulario').reset();
- e.preventDefault()
-})
+}
+
+
+
 
 
 
