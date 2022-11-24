@@ -1,40 +1,44 @@
+//import { vectorUsuarios, vectorLogueados } from './registrarse';
 
+// let mailUsuarioVerificar = document.querySelector('.correo').value.toString();
+// let passUsuarioVerificar = document.querySelector('.contrasenia').value.toString();
 
-let mailUsuarioVerificar = document.querySelector('.correo');
-let passUsuarioVerificar = document.querySelector('.contrasenia');
+// vectorUsuarios
+// vectorLogueados
+
 let btnIngresar = document.querySelector('.ingresar');
-
-//let usuariosLogueados = traerUsuariosLogueados();
+ 
+let usuariosLogueados =  JSON.parse(localStorage.getItem('vectorLogueados'));
 
 btnIngresar.addEventListener('click', direccionarBienvenido);
 
+function direccionarBienvenido() {
+ let validacion = validarUsuarios();
+ if (validacion) {
+  window.open('./bienvenido.html');
+ }
+ else {
+  alert('ocurrio un error al direccionar')
+ }
+}
 
-function validarUsuarios() {
+function validarUsuarios(e) {
  let bandera;
  for (let i = 0; i < usuariosLogueados.length; i++) {
-  let correo = usuariosLogueados[i].email.toString();
-  let clave = usuariosLogueados[i].password.toString();
-  if (mailUsuarioVerificar.value.toString().match(correo) &&
-   passUsuarioVerificar.value.toString().match(clave)) {
-   bandera = true;
-   alert('Bienvenido');
+  if (usuariosLogueados[i].email == document.querySelector('.correo').value &&
+      usuariosLogueados[i].password == document.querySelector('.contrasenia').value) {
+   alert(usuariosLogueados[i].email)
+   alert(usuariosLogueados[i].password)
+   bandera = true
    break
-  }
+  }  
   else {
-   bandera = false;
-   alert('los datos son incorrectos o no existe el usuario');
-   break
+  bandera = false;
   }
  }
  return bandera
+ e.preventDefault();
 }
 
-function direccionarBienvenido() {
- let validacion = validarUsuarios();
- if (validacion == true) {
-  //window.location = 'bienvenido.html';
-  alert('ksksksk')
- }
-}
 
 

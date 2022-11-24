@@ -32,7 +32,8 @@ let vectorUsuarios = [
 const vectorLogueados = JSON.parse(localStorage.getItem('vectorLogueados'));
 
 if (vectorLogueados == null) {
- localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios))
+ localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
+ location.reload();
 }
 else {
  document.querySelector('.btnRegistrar').addEventListener('click', (e) => {
