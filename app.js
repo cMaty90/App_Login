@@ -1,15 +1,37 @@
-//import { vectorUsuarios, vectorLogueados } from './registrarse';
+let vectorUsuarios = [
+ user1 = {
+  userId: 1,
+  username: "usu1",
+  email: "usuario1_@gmail.com",
+  password: "uno123",
+  name: "matias",
+  lastname:"becerra"
+ },
 
-// let mailUsuarioVerificar = document.querySelector('.correo').value.toString();
-// let passUsuarioVerificar = document.querySelector('.contrasenia').value.toString();
+ user2 = {
+  userId: 2,
+  username: "usu2",
+  email: "usuario2_@gmail.com",
+  password: "dos345",
+  name: "franco",
+  lastname:"diaz"
+ },
 
-// vectorUsuarios
-// vectorLogueados
-
-let btnIngresar = document.querySelector('.ingresar');
+ user3 = {
+  userId: 3,
+  username: "usu3",
+  email: "usuario3_@gmail.com",
+  password: "tres456",
+  name: "valentina",
+  lastname:"gomez"
+ }
  
-let usuariosLogueados =  JSON.parse(localStorage.getItem('vectorLogueados'));
+]
 
+localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
+
+let usuariosLogueados = JSON.parse(localStorage.getItem('vectorLogueados'));
+let btnIngresar = document.querySelector('.ingresar');
 btnIngresar.addEventListener('click', direccionarBienvenido);
 
 function direccionarBienvenido() {
@@ -27,9 +49,11 @@ function validarUsuarios(e) {
  for (let i = 0; i < usuariosLogueados.length; i++) {
   if (usuariosLogueados[i].email == document.querySelector('.correo').value &&
       usuariosLogueados[i].password == document.querySelector('.contrasenia').value) {
-   alert(usuariosLogueados[i].email)
-   alert(usuariosLogueados[i].password)
-   bandera = true
+   alert(usuariosLogueados[i].email);
+   alert(usuariosLogueados[i].password);
+   let infoUsuarioBienvenido = [usuariosLogueados[i].name, usuariosLogueados[i].username];
+   localStorage.setItem('usuarioBienvenido', JSON.stringify(infoUsuarioBienvenido));
+   bandera = true;
    break
   }  
   else {

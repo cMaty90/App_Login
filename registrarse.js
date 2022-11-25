@@ -1,3 +1,6 @@
+let user1;
+let user2;
+let user3;
 
 let vectorUsuarios = [
  user1 = {

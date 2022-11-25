@@ -39,6 +39,10 @@ footer a{
 }
 
 /*-----------------ESTILOS REGISTRARSE---------------------------*/
+.registrarse{
+  font-family: 'Courier New', Courier, monospace;
+}
+
 form > div{
  margin-bottom: 30px;
 }
