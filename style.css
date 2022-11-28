@@ -1,3 +1,4 @@
+/*-----------------------------ESTILOS LOGIN------------------------*/
 h2{
  text-align: center;
  margin-bottom: 30px;
@@ -23,9 +24,60 @@ li input, button{
  border-radius: 5px;
 }
 
+footer a{
+ border: 0.2px solid;
+ border-radius: 10px;
+ padding: 10px;
+ text-decoration: none;
+}
+
 @media(max-width:700px){
  li input{
  width: 90%;
  margin-bottom: 30px;
 }
+}
+
+/*-----------------ESTILOS REGISTRARSE---------------------------*/
+.registrarse{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+form > div{
+ margin-bottom: 30px;
+}
+
+.formulario{
+ text-align: center;
+}
+
+.fila1 input{
+ width: 62%;
+}
+
+/* .fila2__correo{
+ width: 75%;
+} */
+
+@media (max-width:990px){
+ .fila1 input{
+ width: 75%;
+ }
+ .row div{
+  margin-bottom: 30px;
+ }
+ .row{
+  margin-bottom: 5px;
+ }
+}
+
+.volver a{
+ border: 0.2px solid;
+ border-radius: 10px;
+ padding: 10px;
+ text-decoration: none;
+}
+
+.Log{
+ text-align: center;
 }
