@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 })
 
 btnCerrarSesion.addEventListener('click', () => {
- alert('ha cerrado sesion y se borro info de LS')
+ alert('esta por cerrar sesion');
  window.location = './login.html';
  localStorage.removeItem('usuarioBienvenido');
 })

@@ -1,10 +1,7 @@
 
-// let user1;
-// let user2;
-// let user3;
 
 let vectorUsuarios = [
- /*user1 =*/ {
+ {
   userId: 1,
   username: "usu1",
   email: "usuario1_@gmail.com",
@@ -13,23 +10,23 @@ let vectorUsuarios = [
   lastname:"becerra"
  },
 
- /*user2 =*/ {
+  {
   userId: 2,
   username: "usu2",
   email: "usuario2_@gmail.com",
   password: "dos345",
   name: "franco",
   lastname:"diaz"
- },
+  },
 
- /*user3 =*/ {
+  {
   userId: 3,
   username: "usu3",
   email: "usuario3_@gmail.com",
   password: "tres456",
   name: "valentina",
   lastname:"gomez"
- }
+  }
  
 ]
 
