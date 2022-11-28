@@ -55,9 +55,9 @@ form > div{
  width: 62%;
 }
 
-.fila2__correo{
+/* .fila2__correo{
  width: 75%;
-}
+} */
 
 @media (max-width:990px){
  .fila1 input{
@@ -78,4 +78,6 @@ form > div{
  text-decoration: none;
 }
 
-
+.Log{
+ text-align: center;
+}

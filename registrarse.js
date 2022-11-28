@@ -1,9 +1,10 @@
-let user1;
-let user2;
-let user3;
+
+// let user1;
+// let user2;
+// let user3;
 
 let vectorUsuarios = [
- user1 = {
+ /*user1 =*/ {
   userId: 1,
   username: "usu1",
   email: "usuario1_@gmail.com",
@@ -12,7 +13,7 @@ let vectorUsuarios = [
   lastname:"becerra"
  },
 
- user2 = {
+ /*user2 =*/ {
   userId: 2,
   username: "usu2",
   email: "usuario2_@gmail.com",
@@ -21,7 +22,7 @@ let vectorUsuarios = [
   lastname:"diaz"
  },
 
- user3 = {
+ /*user3 =*/ {
   userId: 3,
   username: "usu3",
   email: "usuario3_@gmail.com",
@@ -32,29 +33,52 @@ let vectorUsuarios = [
  
 ]
 
+
 const vectorLogueados = JSON.parse(localStorage.getItem('vectorLogueados'));
 
-if (vectorLogueados == null) {
- localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
- location.reload();
-}
-else {
- document.querySelector('.btnRegistrar').addEventListener('click', (e) => {
-   
-  vectorLogueados.push( newUser = {
-    userId: vectorLogueados.length+1,
-    username: document.querySelector('.fila1__user-name').value,
-    email: document.querySelector('.fila2__correo').value,
-    password: document.querySelector('.fila4__clave').value,
-    name: document.querySelector('.fila1__name').value,
-    lastname: document.querySelector('.fila1__last-name').value
+agregarNuevoUsuario()
+
+function agregarNuevoUsuario() {
+ if (vectorLogueados == null) {
+  localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
+  location.reload();
+ }
+ else {
+  
+  document.querySelector('.btnRegistrar').addEventListener('click', (e) => {
+   let Correo = document.querySelector('.fila2__correo').value;
+   let RepCorreo = document.querySelector('.fila2__rep-correo').value;
+   let Clave = document.querySelector('.fila4__clave').value;
+   let RepClave = document.querySelector('.fila4__rep-clave').value;
+
+   if (Correo!=RepCorreo) {
+    alert('el correo no coinciden');
+    e.preventDefault();
+   }
+   else if (Clave != RepClave) {
+    alert('la contraseña no coincide');
+    e.preventDefault();
+   }
+   else {
+    vectorLogueados.push( newUser = {
+     userId: vectorLogueados.length+1,
+     username: document.querySelector('.fila1__user-name').value,
+     email: document.querySelector('.fila2__correo').value,
+     password: document.querySelector('.fila4__clave').value,
+     name: document.querySelector('.fila1__name').value,
+     lastname: document.querySelector('.fila1__last-name').value
+     })
+     
+     localStorage.setItem('vectorLogueados',JSON.stringify(vectorLogueados));
+     document.querySelector('.formulario').reset();
+     e.preventDefault();
+   }   
   })
   
-  localStorage.setItem('vectorLogueados',JSON.stringify(vectorLogueados));
-  document.querySelector('.formulario').reset();
-  e.preventDefault()
- })
+
+ }
 }
+
 
 
 

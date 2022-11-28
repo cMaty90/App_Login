@@ -14,6 +14,6 @@ window.addEventListener('load', () => {
 
 btnCerrarSesion.addEventListener('click', () => {
  alert('ha cerrado sesion y se borro info de LS')
- window.location = './index.html';
+ window.location = './login.html';
  localStorage.removeItem('usuarioBienvenido');
 })

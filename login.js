@@ -1,34 +1,37 @@
-let vectorUsuarios = [
- user1 = {
-  userId: 1,
-  username: "usu1",
-  email: "usuario1_@gmail.com",
-  password: "uno123",
-  name: "matias",
-  lastname:"becerra"
- },
+// let vectorUsuarios = [
+//  user1 = {
+//   userId: 1,
+//   username: "usu1",
+//   email: "usuario1_@gmail.com",
+//   password: "uno123",
+//   name: "matias",
+//   lastname:"becerra"
+//  },
 
- user2 = {
-  userId: 2,
-  username: "usu2",
-  email: "usuario2_@gmail.com",
-  password: "dos345",
-  name: "franco",
-  lastname:"diaz"
- },
+//  user2 = {
+//   userId: 2,
+//   username: "usu2",
+//   email: "usuario2_@gmail.com",
+//   password: "dos345",
+//   name: "franco",
+//   lastname:"diaz"
+//  },
 
- user3 = {
-  userId: 3,
-  username: "usu3",
-  email: "usuario3_@gmail.com",
-  password: "tres456",
-  name: "valentina",
-  lastname:"gomez"
- }
- 
-]
+//  user3 = {
+//   userId: 3,
+//   username: "usu3",
+//   email: "usuario3_@gmail.com",
+//   password: "tres456",
+//   name: "valentina",
+//   lastname:"gomez"
+//  }
 
-localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios));
+// ]
+
+// window.addEventListener('load', (e) => {
+//  localStorage.setItem('vectorLogueados', JSON.stringify(vectorUsuarios)); //deberia ir vectorUsuarios dentro de stringyfy
+//  //e.preventDefault();
+// })
 
 let usuariosLogueados = JSON.parse(localStorage.getItem('vectorLogueados'));
 let btnIngresar = document.querySelector('.ingresar');
