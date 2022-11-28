@@ -66,7 +66,8 @@ function agregarNuevoUsuario() {
      lastname: document.querySelector('.fila1__last-name').value
      })
      
-     localStorage.setItem('vectorLogueados',JSON.stringify(vectorLogueados));
+     localStorage.setItem('vectorLogueados', JSON.stringify(vectorLogueados));
+     alert('se ha registrado exitosamente');
      document.querySelector('.formulario').reset();
      e.preventDefault();
    }   
